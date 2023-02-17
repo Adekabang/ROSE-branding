@@ -89,7 +89,7 @@ function rebrandStart {
     echo "===================="
     echo "===================="
     echo "Stop Cockpit Services.."
-    systemctl stop cockpit
+#    systemctl stop cockpit
 
     echo "Start Rebranding..."
     mv $default_logo_dir $default_logo_dir.default
@@ -97,16 +97,18 @@ function rebrandStart {
 
     echo "Start Change Background.."
     cp ./bg-default.png $default_bg_dir 
+    ls /usr/share/pixmaps/
 
     echo "Start Change Product.."
     cp ./$logo_dir/$logo_name.png $default_logo_dir 
+    ls /usr/share/cockpit/branding/default/
 
     echo "Start Change OS Name.."
 
 
     echo "/"$logo_dir"/"$logo_name".png"
     echo "Finish Rebranding"
-    systemctl start cockpit
+#    systemctl start cockpit
     echo "Delete this Script"
 }
 
