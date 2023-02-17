@@ -69,11 +69,11 @@ function chooseLogo {
             ;;
         11)
             echo "Rebrand Logo For IAM"
-            logo_name="SCEMC-IAM"
+            logo_name="IAM"
             ;;
         12)
             echo "Rebrand Logo For DCE"
-            logo_name="SCEMC-DCE"
+            logo_name="DCE"
             ;;
             
         *)
@@ -106,6 +106,7 @@ function rebrandStart {
 
     echo "/"$logo_dir"/"$logo_name".png"
     echo "Finish Rebranding"
+    systemctl start cockpit
     echo "Delete this Script"
 }
 
