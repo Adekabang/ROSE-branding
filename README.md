@@ -1,6 +1,9 @@
 > **Note**
 > Backup All config before rebrand the software
 
+> **Warning**
+> This Script already tested on Rocky 8.6-8.7
+
 
 ## Cockpit Rebrand
 
