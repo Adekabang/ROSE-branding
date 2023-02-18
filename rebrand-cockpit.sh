@@ -85,6 +85,8 @@ function chooseLogo {
 function rebrandStart {
     default_logo_dir=/usr/share/pixmaps/system-logo-white.png
     default_bg_dir=/usr/share/cockpit/branding/default/bg-plain.jpg
+    default_login_css_dir=/usr/share/cockpit/static/login.css
+    default_favicon_dir=/etc/favicon.png
 
     echo "===================="
     echo "===================="
@@ -94,23 +96,22 @@ function rebrandStart {
     echo "Start Rebranding..."
     mv $default_logo_dir $default_logo_dir.default
     mv $default_bg_dir $default_bg_dir.default
+    mv $default_login_css_dir $default_login_css_dir.default
+    mv $default_favicon_dir $default_favicon_dir.default
 
     echo "Start Change Background.."
-    cp ./bg-default.png $default_bg_dir 
-    ls /usr/share/pixmaps/
+    cp ./bg-default.jpg $default_bg_dir
 
     echo "Start Change Product.."
     cp ./$logo_dir/$logo_name.png $default_logo_dir 
-    ls /usr/share/cockpit/branding/default/
-
-    echo "Start Change OS Name.."
-
-    echo "Backup login.css"
-    cp /usr/share/cockpit/static/login.css /usr/share/cockpit/static/login.css.bkp
     
     echo "Change opacity CSS"
-    sed -i '' -e "s|.66|.0|" /usr/share/cockpit/static/login.css
+    sed -i -e "s|.66|.0|" $default_login_css_dir
 
+    echo "Change Favicon logo"
+    cp ./favicon.png $default_favicon_dir
+
+    echo "Start Change OS Name.."
 
     echo "/"$logo_dir"/"$logo_name".png"
     echo "Finish Rebranding"
