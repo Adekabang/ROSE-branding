@@ -7,6 +7,9 @@
 > **Warning**
 > This Script Contain modification on /etc/os-release. Check this file when update something
 
+> **Warning**
+> This Script need to be root user
+
 
 ## Cockpit Rebrand
 
