@@ -93,7 +93,7 @@ function rebrandStart {
     echo "===================="
     echo "===================="
     echo "Stop Cockpit Services.."
-#    systemctl stop cockpit
+    systemctl stop cockpit
 
     echo "Start Rebranding..."
     cp $default_logo_dir $default_logo_dir.default
@@ -127,7 +127,7 @@ function rebrandStart {
 
     echo "/"$logo_dir"/"$logo_name".png"
     echo "Finish Rebranding"
-#    systemctl start cockpit
+    systemctl start cockpit
     echo "Delete this Script"
 }
 
