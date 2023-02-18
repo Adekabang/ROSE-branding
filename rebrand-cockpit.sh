@@ -87,6 +87,8 @@ function rebrandStart {
     default_bg_dir=/usr/share/cockpit/branding/default/bg-plain.jpg
     default_login_css_dir=/usr/share/cockpit/static/login.css
     default_favicon_dir=/etc/favicon.png
+    default_branding_css=/usr/share/cockpit/branding/rhel/branding.css
+    default_os_release=/etc/os-release
 
     echo "===================="
     echo "===================="
@@ -98,6 +100,8 @@ function rebrandStart {
     cp $default_bg_dir $default_bg_dir.default
     cp $default_login_css_dir $default_login_css_dir.default
     cp $default_favicon_dir $default_favicon_dir.default
+    cp $default_branding_css $default_branding_css.default
+    cp $default_os_release $default_os_release.default
 
     echo -ne "Start Change Background..\r"
     cp ./bg-default.jpg $default_bg_dir
@@ -115,16 +119,17 @@ function rebrandStart {
     cp ./favicon.png $default_favicon_dir
     echo "Finish Change Favicon logo.."
 
-    echo -ne "Start Change OS Name..\r"
-    
-    echo "Finish Change OS Name.."
+    echo -ne "Start Change OS Brand Name..\r"
+    sed -i -e 's|"cc0000"|"4E85A6"|' $default_branding_css
+    sed -i -e 's|content:.*|content: "'$logo_name' Console";|' $default_branding_css
+    sed -i -e 's|"PRETTY_NAME":.*|"PRETTY_NAME": "Hardened Linux"|' $default_os_release
+    echo "Finish Change OS Brand Name.."
 
     echo "/"$logo_dir"/"$logo_name".png"
     echo "Finish Rebranding"
 #    systemctl start cockpit
     echo "Delete this Script"
 }
-
 
 #case statement
 echo "===================="
