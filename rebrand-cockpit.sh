@@ -120,7 +120,7 @@ function rebrandStart {
     echo "Finish Change Favicon logo.."
 
     echo -ne "Start Change OS Brand Name..\r"
-    sed -i -e 's|"cc0000"|"4E85A6"|' $default_branding_css
+    sed -i -e 's|cc0000|4E85A6|' $default_branding_css
     sed -i -e 's|content:.*|content: "'$logo_name' Console";|' $default_branding_css
     sed -i -e 's|"PRETTY_NAME":.*|"PRETTY_NAME": "Hardened Linux"|' $default_os_release
     echo "Finish Change OS Brand Name.."
