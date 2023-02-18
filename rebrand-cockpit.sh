@@ -99,19 +99,25 @@ function rebrandStart {
     cp $default_login_css_dir $default_login_css_dir.default
     cp $default_favicon_dir $default_favicon_dir.default
 
-    echo "Start Change Background.."
+    echo -ne "Start Change Background..\r"
     cp ./bg-default.jpg $default_bg_dir
+    echo "Finish Change Background.."
 
-    echo "Start Change Product.."
+    echo -ne "Start Change Product..\r"
     cp ./$logo_dir/$logo_name.png $default_logo_dir 
-    
-    echo "Change opacity CSS"
+    echo "Finish Change Product.."
+
+    echo -ne "Start Change Opacity CSS..\r"
     sed -i -e "s|.66|.0|" $default_login_css_dir
+    echo "Finish Change Opacity CSS.."
 
-    echo "Change Favicon logo"
+    echo -ne "Start Change Favicon logo..\r"
     cp ./favicon.png $default_favicon_dir
+    echo "Finish Change Favicon logo.."
 
-    echo "Start Change OS Name.."
+    echo -ne "Start Change OS Name..\r"
+    
+    echo "Finish Change OS Name.."
 
     echo "/"$logo_dir"/"$logo_name".png"
     echo "Finish Rebranding"
