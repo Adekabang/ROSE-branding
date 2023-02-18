@@ -15,10 +15,9 @@ systemctl status cockpit
 
 
 ```sh
-cd /root
-pkg install -y git bash vim
+cd ~
 git clone  https://github.com/Adekabang/RISS-branding.git
-cd /root/RISS-branding
+cd ~/RISS-branding
 ```
 
 change file permission for execution
