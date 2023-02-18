@@ -1,8 +1,11 @@
 > **Note**
 > Backup All config before rebrand the software
 
-> **Warning**
+> **Note**
 > This Script already tested on Rocky 8.6-8.7
+
+> **Warning**
+> This Script Contain modification on /etc/os-release. Check this file when update something
 
 
 ## Cockpit Rebrand
