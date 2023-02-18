@@ -104,6 +104,10 @@ function rebrandStart {
     ls /usr/share/cockpit/branding/default/
 
     echo "Start Change OS Name.."
+
+    echo "Backup login.css"
+    cp /usr/share/cockpit/static/login.css /usr/share/cockpit/static/login.css.bkp
+    
     echo "Change opacity CSS"
     sed -i '' -e "s|.66|.0|" /usr/share/cockpit/static/login.css
 
