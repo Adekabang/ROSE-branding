@@ -94,10 +94,10 @@ function rebrandStart {
 #    systemctl stop cockpit
 
     echo "Start Rebranding..."
-    mv $default_logo_dir $default_logo_dir.default
-    mv $default_bg_dir $default_bg_dir.default
-    mv $default_login_css_dir $default_login_css_dir.default
-    mv $default_favicon_dir $default_favicon_dir.default
+    cp $default_logo_dir $default_logo_dir.default
+    cp $default_bg_dir $default_bg_dir.default
+    cp $default_login_css_dir $default_login_css_dir.default
+    cp $default_favicon_dir $default_favicon_dir.default
 
     echo "Start Change Background.."
     cp ./bg-default.jpg $default_bg_dir
