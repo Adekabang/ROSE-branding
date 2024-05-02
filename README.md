@@ -22,8 +22,8 @@ systemctl status cockpit
 
 ```sh
 cd ~
-git clone  https://github.com/Adekabang/RISS-branding.git
-cd ~/RISS-branding
+git clone  https://github.com/Adekabang/ROSE-branding.git
+cd ~/ROSE-branding
 ```
 
 change file permission for execution
@@ -39,5 +39,5 @@ systemctl status cockpit
 
 after finish then remove clone folder 
 ```sh
-rm -rf RISS-branding
+rm -rf ROSE-branding
 ```
